@@ -1,0 +1,9 @@
+<h1> Submit a new post </h1>
+<%= form_for @post do |f| %>
+	<%= f.text_field :title %> 
+	<%= f.label :title %>
+	<%= f.text_field :content %>
+	<%= f.label :content %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+<%= f.submit "Create Post" %>
+<% end %>

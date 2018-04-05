@@ -3,7 +3,14 @@
   <head>
     <title>RedditClone</title>
     <%= csrf_meta_tags %>
+    <%= link_to "Home", root_path %>
+		<% if !current_user %>
+			<%= link_to "create account", new_user_registration_path %>
+			<%= link_to "log in", user_session_path %>
 
+		<% else %>
+			<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+		<% end %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

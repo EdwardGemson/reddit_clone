@@ -1,0 +1,6 @@
+<h1> This is logged in homepage r/all</h1>
+<% @posts.each do |post| %>
+	<h1><%= link_to "#{post.title}", post_path(post) %></h1>
+	<h3> <%= post.user.email %> </h3>
+<% end %>
+<%= link_to "Submit a new link", new_post_path %>
